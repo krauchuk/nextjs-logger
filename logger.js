@@ -8,8 +8,8 @@ export const LEVELS = {
 const DEFAULT_LOG_LEVEL = LEVELS.WARN;
 
 const getLogLevel = () => {
-  if (process.env.LOG_LEVEL) return LEVELS[process.env.LOG_LEVEL] || DEFAULT_LOG_LEVEL;
-  if (typeof window !== 'undefined') return LEVELS[window.localStorage.getItem('LOG_LEVEL')] || DEFAULT_LOG_LEVEL;
+  if (process.env.LOG_LEVEL) return LEVELS[process.env.LOG_LEVEL] ?? DEFAULT_LOG_LEVEL;
+  if (typeof window !== 'undefined') return LEVELS[window.localStorage.getItem('LOG_LEVEL')] ?? DEFAULT_LOG_LEVEL;
 };
 
 const log = (level, method, message) => {
